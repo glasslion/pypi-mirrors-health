@@ -46,7 +46,7 @@ jobs:
           at: ~/repo
       - run: 'pwd'
       - run: 'git --no-pager diff'
-      - run: 'git diff --quiet && git commit -am "PyPI status updates"'
+      - run: 'git diff --quiet && echo "No changes" || git commit -am "PyPI status updates"'
 
 workflows:
   version: 2
