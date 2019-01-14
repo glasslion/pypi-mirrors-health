@@ -8,7 +8,7 @@ class Mirror:
     name: str
     location: str
     status: bool  = False
-    last_modified: str  = ''
+    last_modified: datetime  = None
 
 
 MIRROES = [Mirror(*args) for args in (
@@ -29,9 +29,9 @@ def check_mirror(location):
         last_modified = datetime.strptime(timestamp, '%Y%m%dT%H:%M:%S')
         now = datetime.utcnow()
         assert (now-last_modified).days < 1
-        return (True, timestamp)
+        return (True, last_modified)
     except:
-        return (False, timestamp)
+        return (False, last_modified)
 
 
 def get_badge(status):
@@ -42,26 +42,43 @@ def get_badge(status):
 
 
 def render_markdown_table(mirrors):
-    rows = [['PyPI Mirror', 'Location', 'Status', 'Last Modified']]
+    rows = [['PyPI Mirror', 'Location', 'Status', '上次同步时间']]
     rows.append(['---']*4)
     for m in mirrors:
-        rows.append([m.name, m.location, get_badge(m.status), m.last_modified])
+        rows.append([
+            m.name, m.location, get_badge(m.status),
+            m.last_modified.strftime('%Y-%m-%d %H:%M:%S')
+        ])
     text = ''
     for row in rows:
         text += '| ' + ' | '.join(row) + ' |\n'
     return text
 
 
+def show_outages(mirrors):
+    now = datetime.utcnow()
+    snow = now.strftime('%Y-%m-%d')
+    with open('./outages.txt', 'a' ) as f:
+        for m in MIRROES:
+            if not m.status:
+                days = (now - m.last_modified).days
+                f.write(f'{snow}   {m.location} DOWN {days}days')
+
 
 def main():
     for mirror in MIRROES:
         mirror.status, mirror.last_modified = check_mirror(mirror.location)
     table = render_markdown_table(MIRROES)
-    readme = """PyPI Mirrors Health Checker
+    readme = """PyPI Mirrors Health Status
 ===========================
+
+## 缘起
+由于众所周知的原因， 国内访问 PyPI 官方源的速度很不稳定。 尽管有众多的第三方源，但这些第三方源的稳定性欠佳， 都曾经出现长时间未和官方源同步的问题。 本项目会每天检查各第三方源的同步状态， 便于大家评估和选择靠谱的源。
 """
     readme += '\n' + table
-    print(readme)
+    with open('./README.md', 'a' ) as f:
+        f.write(readme)
+    show_outages(MIRROES)
 
 
 if __name__ == '__main__':
