@@ -44,9 +44,13 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/repo
-      - run: 'pwd'
-      - run: 'git --no-pager diff'
-      - run: 'git diff --quiet && echo "No changes" || git commit -am "PyPI status updates"'
+      - run:
+          name: Commit if has changes
+          command: |
+            git --no-pager diff
+            git config --global user.email "glasslion@gmail.com"
+            git config --global user.name "Leo Zhou"
+            git diff --quiet && echo "No changes" || git commit -am "PyPI status updates
       - run: 'git remote add "token-remote" https://${GH_TOKEN}@github.com/glasslion/pypi-mirrors-health.git > /dev/null 2>&1'
       - run: 'git status'
 
