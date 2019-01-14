@@ -29,6 +29,7 @@ jobs:
           command: |
             . venv/bin/activate
             python check.py
+            tail -2 outages.txt > outages.tmp  && mv outages.tmp outages.txt
             git --no-pager diff
 
       - persist_to_workspace:
@@ -61,7 +62,7 @@ workflows:
   nightly:
     triggers:
       - schedule:
-          cron: "35 12 * * *"
+          cron: "45 12 * * *"
           filters:
             branches:
               only:
