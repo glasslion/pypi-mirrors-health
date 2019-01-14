@@ -62,7 +62,7 @@ def show_outages(mirrors):
         for m in MIRROES:
             if not m.status:
                 days = (now - m.last_modified).days
-                f.write(f'{snow}   {m.location} DOWN {days}days')
+                f.write(f'{snow}   {m.location} DOWN {days}days\ntail ')
 
 
 def main():
@@ -76,7 +76,7 @@ def main():
 由于众所周知的原因， 国内访问 PyPI 官方源的速度很不稳定。 尽管有众多的第三方源，但这些第三方源的稳定性欠佳， 都曾经出现长时间未和官方源同步的问题。 本项目会每天检查各第三方源的同步状态， 便于大家评估和选择靠谱的源。
 """
     readme += '\n' + table
-    with open('./README.md', 'a' ) as f:
+    with open('./README.md', 'w' ) as f:
         f.write(readme)
     show_outages(MIRROES)
 
