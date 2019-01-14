@@ -52,7 +52,7 @@ jobs:
             git config --global user.name "Leo Zhou"
             git diff --quiet && echo "No changes" || git commit -am "PyPI status updates"
       - run: 'git remote add "token-remote" https://${GH_TOKEN}@github.com/glasslion/pypi-mirrors-health.git > /dev/null 2>&1'
-      - run: 'git push token-remote > /dev/null 2>&1'
+      - run: 'mute=$(git push token-remote --quiet)'
 
 workflows:
   version: 2
