@@ -29,6 +29,7 @@ jobs:
           command: |
             . venv/bin/activate
             python check.py > README.md
+            git --no-pager diff
 
 
       - persist_to_workspace:
@@ -44,8 +45,8 @@ jobs:
       - attach_workspace:
           at: ~/repo
       - run: 'pwd'
-      - run: 'git diff'
-      - run: 'git commit -a -m "PyPI status updates"'
+      - run: 'git --no-pager diff'
+      - run: 'git diff --quiet && git commit -am "PyPI status updates"'
 
 workflows:
   version: 2
