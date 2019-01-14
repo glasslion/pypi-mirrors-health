@@ -59,6 +59,10 @@ workflows:
   commit:
     jobs:
       - check-mirrors
+      - commit-readme:
+          requires:
+            - check-mirrors
+
   nightly:
     triggers:
       - schedule:
