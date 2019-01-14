@@ -47,7 +47,7 @@ jobs:
       - run: 'pwd'
       - run: 'git --no-pager diff'
       - run: 'git diff --quiet && echo "No changes" || git commit -am "PyPI status updates"'
-      - run: 'git remote add 'token-remote' https://${GH_TOKEN}@github.com/glasslion/pypi-mirrors-health.git > /dev/null 2>&1'
+      - run: 'git remote add "token-remote" https://${GH_TOKEN}@github.com/glasslion/pypi-mirrors-health.git > /dev/null 2>&1'
       - run: 'git status'
 
 workflows:
