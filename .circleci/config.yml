@@ -62,7 +62,6 @@ jobs:
   commit-readme:
     steps:
       - attach_workspace:
-          # Must be absolute path or relative path from working_directory
           at: ~/repo
       - run: 'pwd'
       - run: 'ls'
@@ -85,6 +84,6 @@ workflows:
                 - master
     jobs:
       - check-mirrors
-      - :
+      - commit-readme:
           requires:
             - check-mirrors
