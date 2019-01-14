@@ -52,16 +52,13 @@ jobs:
             git config --global user.name "Leo Zhou"
             git diff --quiet && echo "No changes" || git commit -am "PyPI status updates"
       - run: 'git remote add "token-remote" https://${GH_TOKEN}@github.com/glasslion/pypi-mirrors-health.git > /dev/null 2>&1'
-      - run: 'git status'
+      - run: 'git push token-remote'
 
 workflows:
   version: 2
   commit:
     jobs:
       - check-mirrors
-      - commit-readme:
-          requires:
-            - check-mirrors
   nightly:
     triggers:
       - schedule:
