@@ -62,7 +62,7 @@ def show_outages(mirrors):
         for m in MIRROES:
             if not m.status:
                 days = (now - m.last_modified).days
-                f.write(f'{snow}   {m.location} DOWN {days}days\ntail ')
+                f.write(f'{snow}   {m.location} DOWN {days}days\n')
 
 
 def main():
