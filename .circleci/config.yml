@@ -57,7 +57,7 @@ jobs:
           # taken to be the root directory of the workspace.
           root: ~/repo
           paths:
-            - *
+            - '*'
 
   commit-readme:
     executor: common-executor
