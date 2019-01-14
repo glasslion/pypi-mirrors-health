@@ -4,7 +4,7 @@
 #
 version: 2
 jobs:
-  build:
+  check-mirrors:
     docker:
       # specify the version you desire here
       # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
@@ -48,14 +48,33 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            python check.py
+            python check.py > README.md
 
       - store_artifacts:
           path: test-reports
           destination: test-reports
 
+      - persist_to_workspace:
+          # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is
+          # taken to be the root directory of the workspace.
+          root: ~/repo
+
+  commit-readme:
+    steps:
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: ~/repo
+      - run: 'pwd'
+      - run: 'ls'
+
 workflows:
   version: 2
+  commit:
+    jobs:
+      - check-mirrors
+      - commit-readme:
+          requires:
+            - check-mirrors
   nightly:
     triggers:
       - schedule:
@@ -65,4 +84,7 @@ workflows:
               only:
                 - master
     jobs:
-      - build
+      - check-mirrors
+      - :
+          requires:
+            - check-mirrors
