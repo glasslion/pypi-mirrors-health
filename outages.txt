@@ -1,2 +1,2 @@
-2019-01-18   https://mirrors.ustc.edu.cn/pypi/web/simple DOWN 1days
 2019-01-19   https://mirrors.ustc.edu.cn/pypi/web/simple DOWN 2days
+2019-01-20   https://mirrors.ustc.edu.cn/pypi/web/simple DOWN 3days
