@@ -29,7 +29,7 @@ jobs:
           command: |
             . venv/bin/activate
             python check.py
-            tail -2 outages.txt > outages.tmp  && mv outages.tmp outages.txt
+            tail -200 outages.txt > outages.tmp  && mv outages.tmp outages.txt
             git --no-pager diff
 
       - persist_to_workspace:
