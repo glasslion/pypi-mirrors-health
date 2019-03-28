@@ -9,3 +9,5 @@
 2019-03-13   https://mirrors.ustc.edu.cn/pypi/web/simple DOWN 1days
 2019-03-14   https://pypi.tuna.tsinghua.edu.cn/simple DOWN 1days
 2019-03-14   https://mirrors.ustc.edu.cn/pypi/web/simple DOWN 1days
+2019-03-28   https://pypi.tuna.tsinghua.edu.cn/simple DOWN 1days
+2019-03-28   https://mirrors.ustc.edu.cn/pypi/web/simple DOWN 1days
