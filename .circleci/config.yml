@@ -48,8 +48,8 @@ jobs:
           name: Commit if has changes
           command: |
             git --no-pager diff
-            git config --global user.email "glasslion@gmail.com"
-            git config --global user.name "Leo Zhou"
+            git config --global user.email "glasslion+nobody@gmail.com"
+            git config --global user.name "Nobody"
             git diff --quiet && echo "No changes" || git commit -am "PyPI status updates"
       - run: 'git remote add "token-remote" https://${GH_TOKEN}@github.com/glasslion/pypi-mirrors-health.git > /dev/null 2>&1'
       - run: "script -c 'git push token-remote --quiet' > /dev/null"
