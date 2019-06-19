@@ -7,7 +7,7 @@ PyPI Mirrors Health Status
 
 | PyPI Mirror | Location | Status | 上次同步时间 |
 | --- | --- | --- | --- |
-| 豆瓣 | http://pypi.doubanio.com/simple | ![staus OK](https://img.shields.io/badge/staus-OK-brightgreen.svg?style=for-the-badge) | 2019-06-18 01:00:04 |
-| 阿里云 | http://mirrors.aliyun.com/pypi/simple | ![staus OK](https://img.shields.io/badge/staus-OK-brightgreen.svg?style=for-the-badge) | 2019-06-17 22:11:23 |
-| 清华 | https://pypi.tuna.tsinghua.edu.cn/simple | ![staus OK](https://img.shields.io/badge/staus-OK-brightgreen.svg?style=for-the-badge) | 2019-06-18 00:58:35 |
-| 中科大 | https://mirrors.ustc.edu.cn/pypi/web/simple | ![staus OK](https://img.shields.io/badge/staus-OK-brightgreen.svg?style=for-the-badge) | 2019-06-18 00:58:35 |
+| 豆瓣 | http://pypi.doubanio.com/simple | ![staus OK](https://img.shields.io/badge/staus-OK-brightgreen.svg?style=for-the-badge) | 2019-06-19 00:30:06 |
+| 阿里云 | http://mirrors.aliyun.com/pypi/simple | ![staus OK](https://img.shields.io/badge/staus-OK-brightgreen.svg?style=for-the-badge) | 2019-06-18 10:11:23 |
+| 清华 | https://pypi.tuna.tsinghua.edu.cn/simple | ![staus fail](https://img.shields.io/badge/staus-fail-red.svg?style=for-the-badge) | 2019-06-17 04:24:53 |
+| 中科大 | https://mirrors.ustc.edu.cn/pypi/web/simple | ![staus fail](https://img.shields.io/badge/staus-fail-red.svg?style=for-the-badge) | 2019-06-17 04:24:53 |
