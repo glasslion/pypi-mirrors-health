@@ -14,3 +14,5 @@
 2019-05-01   http://mirrors.aliyun.com/pypi/simple DOWN 1days
 2019-05-01   https://pypi.tuna.tsinghua.edu.cn/simple DOWN 1days
 2019-05-01   https://mirrors.ustc.edu.cn/pypi/web/simple DOWN 1days
+2019-06-19   https://pypi.tuna.tsinghua.edu.cn/simple DOWN 1days
+2019-06-19   https://mirrors.ustc.edu.cn/pypi/web/simple DOWN 1days
