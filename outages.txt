@@ -20,3 +20,5 @@
 2019-06-27   https://mirrors.ustc.edu.cn/pypi/web/simple DOWN 1days
 2019-06-30   https://pypi.tuna.tsinghua.edu.cn/simple DOWN 2days
 2019-06-30   https://mirrors.ustc.edu.cn/pypi/web/simple DOWN 2days
+2019-07-02   https://pypi.tuna.tsinghua.edu.cn/simple DOWN 1days
+2019-07-02   https://mirrors.ustc.edu.cn/pypi/web/simple DOWN 1days
