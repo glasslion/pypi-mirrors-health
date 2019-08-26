@@ -31,3 +31,4 @@
 2019-08-23   http://pypi.doubanio.com/simple DOWN 1days
 2019-08-24   http://pypi.doubanio.com/simple DOWN 1days
 2019-08-25   http://pypi.doubanio.com/simple DOWN 1days
+2019-08-26   http://pypi.doubanio.com/simple DOWN 1days
