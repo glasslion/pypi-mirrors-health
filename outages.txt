@@ -41,3 +41,5 @@
 2019-09-14   http://pypi.doubanio.com/simple DOWN 1days
 2019-09-17   http://pypi.doubanio.com/simple DOWN 1days
 2019-09-18   http://pypi.doubanio.com/simple DOWN 1days
+2019-10-26   https://pypi.tuna.tsinghua.edu.cn/simple DOWN 1days
+2019-10-26   https://mirrors.ustc.edu.cn/pypi/web/simple DOWN 1days
